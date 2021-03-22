@@ -1,76 +1,149 @@
-const unlayer = window.unlayer.React
-
-const Viewer = () => {
-    return unlayer.createViewer(<div><table className="review-form-table-wrapper" style={{ borderCollapse: 'collapse', tableLayout: 'fixed', width: '100%' }}>
-        <thead />
-        <tbody>
-            <tr className="review-form__row review-form__row--rating-label">
-                <td colSpan={5} style={{ padding: '0 0 10px' }}>
-                    <label className="review-form__label review-form__rating-title-label" style={{ display: 'block', fontWeight: 500, width: '100%' }}>
-                        Rating
-          </label>
-                </td>
-            </tr>
-            <tr className="review-form__row review-form__row--rating">
-                <td className="review-form__rating-cell" style={{ border: 'none', lineHeight: '1.2', padding: '0 0 10px', width: '15%' }} align="center" valign="top">
-                    <label className="review-form__rating-label" style={{ display: 'block' }}>
-                        <input className="review-form__rating" name="review_rating" type="radio" defaultValue={1} style={{ display: 'block', fontFamily: 'Helvetica Neue, Helvetica, Arial, Sans-Serif', fontSize: 14, lineHeight: '1.5', margin: '0 auto 5px' }} />
-                        <div className="review-form__rating-star review-form__rating-star--2-lines" style={{ color: '#fec610', fontSize: 16, lineHeight: 2, maxWidth: 65, textShadow: '0 0 1px rgba(0, 0, 0, 0.15)' }}>★</div>
-                    </label>
-                </td>
-                <td className="review-form__rating-cell" style={{ border: 'none', lineHeight: '1.2', padding: '0 0 10px', width: '20%' }} align="center" valign="top">
-                    <label className="review-form__rating-label" style={{ display: 'block' }}>
-                        <input className="review-form__rating" name="review_rating" type="radio" defaultValue={2} style={{ display: 'block', fontFamily: 'Helvetica Neue, Helvetica, Arial, Sans-Serif', fontSize: 14, lineHeight: '1.5', margin: '0 auto 5px' }} />
-                        <div className="review-form__rating-star review-form__rating-star--2-lines" style={{ color: '#fec610', fontSize: 16, lineHeight: 2, maxWidth: 65, textShadow: '0 0 1px rgba(0, 0, 0, 0.15)' }}>★★</div>
-                    </label>
-                </td>
-                <td className="review-form__rating-cell" style={{ border: 'none', lineHeight: '1.2', padding: '0 0 10px', width: '20%' }} align="center" valign="top">
-                    <label className="review-form__rating-label" style={{ display: 'block' }}>
-                        <input className="review-form__rating" name="review_rating" type="radio" defaultValue={3} style={{ display: 'block', fontFamily: 'Helvetica Neue, Helvetica, Arial, Sans-Serif', fontSize: 14, lineHeight: '1.5', margin: '0 auto 5px' }} />
-                        <div className="review-form__rating-star" style={{ color: '#fec610', fontSize: 16, maxWidth: 65, textShadow: '0 0 1px rgba(0, 0, 0, 0.15)' }}>★★</div>
-                        <div className="review-form__rating-star" style={{ color: '#fec610', fontSize: 16, maxWidth: 65, textShadow: '0 0 1px rgba(0, 0, 0, 0.15)' }}>★</div>
-                    </label>
-                </td>
-                <td className="review-form__rating-cell" style={{ border: 'none', lineHeight: '1.2', padding: '0 0 10px', width: '22%' }} align="center" valign="top">
-                    <label className="review-form__rating-label" style={{ display: 'block' }}>
-                        <input className="review-form__rating" name="review_rating" type="radio" defaultValue={4} style={{ display: 'block', fontFamily: 'Helvetica Neue, Helvetica, Arial, Sans-Serif', fontSize: 14, lineHeight: '1.5', margin: '0 auto 5px' }} />
-                        <div className="review-form__rating-star" style={{ color: '#fec610', fontSize: 16, maxWidth: 65, textShadow: '0 0 1px rgba(0, 0, 0, 0.15)' }}>★★</div>
-                        <div className="review-form__rating-star" style={{ color: '#fec610', fontSize: 16, maxWidth: 65, textShadow: '0 0 1px rgba(0, 0, 0, 0.15)' }}>★★</div>
-                    </label>
-                </td>
-                <td className="review-form__rating-cell" style={{ border: 'none', lineHeight: '1.2', padding: '0 0 10px', width: '23%' }} align="center" valign="top">
-                    <label className="review-form__rating-label" style={{ display: 'block' }}>
-                        <input className="review-form__rating" name="review_rating" type="radio" defaultValue={5} defaultChecked="checked" style={{ display: 'block', fontFamily: 'Helvetica Neue, Helvetica, Arial, Sans-Serif', fontSize: 14, lineHeight: '1.5', margin: '0 auto 5px' }} />
-                        <div className="review-form__rating-star" style={{ color: '#fec610', fontSize: 16, maxWidth: 65, textShadow: '0 0 1px rgba(0, 0, 0, 0.15)' }}>★★★</div>
-                        <div className="review-form__rating-star" style={{ color: '#fec610', fontSize: 16, maxWidth: 65, textShadow: '0 0 1px rgba(0, 0, 0, 0.15)' }}>★★</div>
-                    </label>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    </div>)
-}
-
-unlayer.registerTool({
-    name: 'my_tool',
-    label: 'My Tool',
-    icon: 'fa-smile',
-    supportedDisplayModes: ['web', 'email'],
-    options: {},
-    values: {},
-    renderer: {
-      Viewer: Viewer,
-      exporters: {
-        web: function (values) {
-          return '<div>I am a custom tool.</div>';
+parcelRequire = (function (e, r, t, n) {
+  var i,
+    o = "function" == typeof parcelRequire && parcelRequire,
+    u = "function" == typeof require && require;
+  function f(t, n) {
+   
+    return r[t].exports;
+    function p(e) {
+      return f(p.resolve(e));
+    }
+  }
+  (f.isParcelRequire = !0),
+    (f.Module = function (e) {
+      (this.id = e), (this.bundle = f), (this.exports = {});
+    }),
+    (f.modules = e),
+    (f.cache = r),
+    (f.parent = o),
+    (f.register = function (r, t) {
+      e[r] = [
+        function (e, r) {
+          r.exports = t;
         },
-        email: function (values) {
-          return '<div>I am a custom tool.</div>';
-        },
+        {},
+      ];
+    });
+  for (var c = 0; c < t.length; c++)
+    try {
+      f(t[c]);
+    } catch (e) {
+      i || (i = e);
+    }
+  if (t.length) {
+    var l = f(t[t.length - 1]);
+    "object" == typeof exports && "undefined" != typeof module
+      ? (module.exports = l)
+      : "function" == typeof define && define.amd
+      ? define(function () {
+          return l;
+        })
+      : n && (this[n] = l);
+  }
+  if (((parcelRequire = f), i)) throw i;
+  return f;
+})(
+  {
+    jbf7: [
+      function (require, module, exports) {
+        var e = window.unlayer.React,
+          t = function (t) {
+            t.label;
+            var l = t.value,
+              o = t.updateValue;
+            t.data;
+            return e.createElement(
+              "div",
+              null,
+              e.createElement("div", null, "My React Color Picker"),
+              e.createElement("input", {
+                class: "color-value",
+                defaultValue: l,
+                onChange: function (e) {
+                  return o(e.target.value);
+                },
+              }),
+              e.createElement(
+                "button",
+                {
+                  class: "red",
+                  onClick: function () {
+                    return o("#f00");
+                  },
+                },
+                "Red"
+              ),
+              e.createElement(
+                "button",
+                {
+                  class: "green",
+                  onClick: function () {
+                    return o("#0f0");
+                  },
+                },
+                "Green"
+              ),
+              e.createElement(
+                "button",
+                {
+                  class: "blue",
+                  onClick: function () {
+                    return o("#00f");
+                  },
+                },
+                "Blue"
+              )
+            );
+          };
+        unlayer.registerPropertyEditor({ name: "my_color_picker", Widget: t });
+        var l = function (t) {
+          var l = t.values;
+          return e.createElement(
+            "div",
+            { style: { color: l.textColor } },
+            "I am a custom tool."
+          );
+        };
+        unlayer.registerTool({
+          name: "my_tool",
+          label: "My Tool",
+          icon: "fa-smile",
+          supportedDisplayModes: ["web", "email"],
+          options: {
+            default: { title: null },
+            text: {
+              title: "Text",
+              position: 1,
+              options: {
+                textColor: {
+                  label: "Color",
+                  defaultValue: "#ff0000",
+                  widget: "my_color_picker",
+                },
+              },
+            },
+          },
+          values: {},
+          renderer: {
+            Viewer: l,
+            exporters: {
+              web: function (e) {
+                return "<div>I am a custom tool.</div>";
+              },
+              email: function (e) {
+                return "<div>I am a custom tool.</div>";
+              },
+            },
+            head: { css: function (e) {}, js: function (e) {} },
+          },
+        });
       },
-      head: {
-        css: function (values) {},
-        js: function (values) {},
-      },
-    },
-  });
+      {},
+    ],
+  },
+  {},
+  ["jbf7"],
+  null
+);
+//# sourceMappingURL=/custom.js.map
+
